@@ -31,8 +31,11 @@ class CreateImage():
         for i in range(0, self.height):
             self.pixels.append([])
             for j in range(0, self.width):
-                b = round(((math.sin((2.8*j*math.pi) / 180))**2) * 255)
-                r,g= 0,0
+                g = 2*(255 + (j-i)) % 255
+                e = 8*(j+32)
+                b = e % 255 if (e // 255) % 2 != 0  else 255 - e % 255
+                h = 8*(i+32)
+                r = h % 255 if (h // 255) % 2 != 0  else 255 - h % 255
                 self.pixels[i].append([r,g,b])
 
         # Save a pixel
@@ -87,3 +90,29 @@ imwrite(os.path.abspath("demo.jpg"), f)
 #11 SIN SOLUTION 
 # b = round(((math.sin((2.8*j*math.pi) / 180))**2) * 255)
 # r,g = 0,0
+
+#11 TERRIBLE SOLUTION
+# e = 8*(j+32)
+# b = e % 255 if (e // 255) % 2 != 0  else 255 - e % 255
+# r,g = 0,0
+
+#12
+# g = (255 + (j-i)) % 255
+
+#13
+# g = (255 + (j+i)) % 255
+
+#14
+# g = 2*(255 + (j-i)) % 255
+
+#15 SIN SOLUTION
+# g = 2*(255 + (j-i)) % 255
+# b = round(((math.sin((2.8*j*math.pi) / 180))**2) * 255)
+# r = round(((math.sin((2.8*i*math.pi) / 180))**2) * 255)
+
+#15 TERRIBLE SOLUTION
+# g = 2*(255 + (j-i)) % 255
+# e = 8*(j+32)
+# b = e % 255 if (e // 255) % 2 != 0  else 255 - e % 255
+# h = 8*(i+32)
+# r = h % 255 if (h // 255) % 2 != 0  else 255 - h % 255
