@@ -74,3 +74,5 @@ imwrite(os.path.abspath("demo.jpg"), f)
 # r,g = 0,0
 
 #8
+# b = 2*j if 2*j <=255 else 255 - 2*j % 255
+# r,g = 0,0
