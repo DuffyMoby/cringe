@@ -31,14 +31,13 @@ class CreateImage():
         for i in range(0, self.height):
             self.pixels.append([])
             for j in range(0, self.width):
-                b = 2*j if 2*j <=255 else 255 - 2*j % 255
-                r,g = 0,0
+                b = round(((math.sin((2.8*j*math.pi) / 180))**2) * 255)
+                r,g= 0,0
                 self.pixels[i].append([r,g,b])
 
         # Save a pixel
         self.save()
 
-os.chdir(r"C:\Users\Moby\Documents\python\Imagegen")
 path = os.path.abspath("demo.ppm")
 image = CreateImage(path, 256, 256)
 image.generateRandom()
@@ -75,4 +74,16 @@ imwrite(os.path.abspath("demo.jpg"), f)
 
 #8
 # b = 2*j if 2*j <=255 else 255 - 2*j % 255
+# r,g = 0,0
+
+#9
+# r = 255 - int(2.95*float(i)) % 255
+# g,b = 0,0
+
+#10
+# b = (4*j) % 255
+# r,g = 0,0
+
+#11 SIN SOLUTION 
+# b = round(((math.sin((2.8*j*math.pi) / 180))**2) * 255)
 # r,g = 0,0
