@@ -37,7 +37,7 @@ class CreateImage():
 
         # Save a pixel
         self.save()
-
+os.chdir(r"C:\Users\mobym\Documents\Python\cringe\Imagegen")
 path = os.path.abspath("demo.ppm")
 image = CreateImage(path, 256, 256)
 image.generateRandom()
