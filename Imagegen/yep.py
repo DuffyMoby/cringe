@@ -1,4 +1,3 @@
-# A class which will generate an image and weite that image to a file
 import random, functools, math, os
 from cv2 import imread, imwrite
 
