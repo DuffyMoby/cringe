@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+            font-family: "Lato", sans-serif;
+            }
+
+            .sidenav {
+            width: 130px;
+            position: fixed;
+            z-index: 1;
+            top: 20px;
+            left: 10px;
+            background: #eee;
+            overflow-x: hidden;
+            padding: 8px 0;
+            }
+
+            .sidenav a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #2196F3;
+            display: block;
+            }
+
+            .sidenav a:hover {
+            color: #064579;
+            }
+
+            .main {
+            margin-left: 140px; /* Same width as the sidebar + left position in px */
+            font-size: 28px; /* Increased text to enable scrolling */
+            padding: 0px 10px;
+            }
+
+            @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+            }
+
+            #box {
+                width: 500px;
+                min-height: 400px;
+                max-height: 600px;
+            }
+
+            #animated_div {
+            width:70px;
+            height:47px;
+            background: #92B901;
+            color: #ffffff;
+            position: relative;
+            font-weight:bold;
+            font-size:20px;
+            padding:10px;
+            animation-iteration-count: infinite;
+            animation:animated_div 5s 1;
+            -moz-animation:animated_div 5s 1;
+            -webkit-animation:animated_div 5s 1;
+            -o-animation:animated_div 5s 1;
+            border-radius:5px;
+            -webkit-border-radius:5px;
+            }
+
+            @keyframes animated_div
+            {
+            0% {transform: rotate(0deg);left:0px;}
+            25% {transform: rotate(20deg);left:0px;}
+            50% {transform: rotate(0deg);left:500px;}
+            55% {transform: rotate(0deg);left:500px;}
+            70% {transform: rotate(0deg);left:500px;background:#1ec7e6;}
+            100% {transform: rotate(-360deg);left:0px;}
+            }
+
+            @-webkit-keyframes animated_div
+            {
+            0% {-webkit-transform: rotate(0deg);left:0px;}
+            25% {-webkit-transform: rotate(20deg);left:0px;}
+            50% {-webkit-transform: rotate(0deg);left:500px;}
+            55% {-webkit-transform: rotate(0deg);left:500px;}
+            70% {-webkit-transform: rotate(0deg);left:500px;background:#1ec7e6;}
+            100% {-webkit-transform: rotate(-360deg);left:0px;}
+            }
+
+            @-moz-keyframes animated_div
+            {
+            0%  {-moz-transform: rotate(0deg);left:0px;}
+            25% {-moz-transform: rotate(20deg);left:0px;}
+            50%  {-moz-transform: rotate(0deg);left:500px;}
+            55%  {-moz-transform: rotate(0deg);left:500px;}
+            70%  {-moz-transform: rotate(0deg);left:500px;background:#1ec7e6;}
+            100% {-moz-transform: rotate(-360deg);left:0px;}
+            }
+
+            @-o-keyframes animated_div
+            {
+            0% {transform: rotate(0deg);left:0px;}
+            25% {transform: rotate(20deg);left:0px;}
+            50%  {transform: rotate(0deg);left:500px;}
+            55%  {transform: rotate(0deg);left:500px;}
+            70%  {transform: rotate(0deg);left:500px;background:#1ec7e6;}
+            100% {transform: rotate(-360deg);left:0px;}
+            }
+
+            p {
+                font-size: 25px;
+            }
+        </style>
+    </head>
+
+
+    <body>
+
+        <div class="sidenav">
+            <a href="https://en.wikipedia.org/wiki/Third_culture_kid">About</a>
+            <a href="#services">Services</a>
+            <a href="#clients">Clients</a>
+            <a href="https://www.kellettschool.com/">Contact</a>
+        </div>
+
+        <div class="main">
+            <table>
+                <td>
+                    <h1>Third Culture</h1>
+                </td>
+                <td>
+                    <div id="animated_div">Third Culture</div>
+                </td>
+            </table>
+            
+
+            <div>
+                <marquee behavior="scroll" direction="right" scrollamount="12">Home</marquee>
+                <marquee behavior="scroll" direction="right" scrollamount="20">Belong</marquee>
+                <marquee behavior="scroll" direction="left" scrollamount="15">Identity</marquee>
+                <marquee behavior="scroll" direction="right" scrollamount="13">Multilingual</marquee>
+                <marquee behavior="scroll" direction="left" scrollamount="50">Society</marquee>
+                <marquee behavior="scroll" direction="left" scrollamount="9">Culture</marquee>
+            </div>
+
+            <p>The "third culture" to which the term refers is the mixed identity that a child assumes, influenced both by their parents' culture and the culture in which they are raised.</p>
+
+            <div>
+                <p>
+                <table>
+                    <marquee width="60%" direction="right" height="100px">
+                        Are you a third culture kid?
+                    </marquee>
+                    <td>
+                        Yes <input type="checkbox" id="yes" value="Yes">
+                        No <input type="checkbox" id="no" value="No">
+                    </td>
+                    <td>
+                        <img src="https://www.seekpng.com/png/full/372-3728772_venn-diagram-third-culture-kid.png" height=200px width=250px >
+                    </td>
+                </table>
+            </div>
+
+            <div>
+                <input type="submit" onclick="check()"></imput>
+            </div>
+
+            <div id="display"></div>
+        </div>  
+
+    </body>
+
+    <script>
+        function check()
+        {
+            var x;
+            x = document.getElementById("yes");
+
+            var y;
+            y = document.getElementById("no");
+
+            if(x.checked)
+            {
+                document.getElementById("display").innerHTML = "<p>You are a third culture kid!</p><p>How to integrate as a third culture kid:</p><p>Be open minded to cultural differences</p><p>Try to educate yourself about the new culture maybe learn the language</p><p>Try to speak to people at lunch and break</p><p>Be open and easily approachable</p>";
+            }else if(y.checked){
+                document.getElementById("display").innerHTML = "<p>You are not a third culture kid!</p><p>How to help new students integrate:</p><p>If you see them alone go talk to them</p><p>Try to find common interests and similarities";
+            }
+        }
+    </script>
+</html> 
